@@ -21,7 +21,7 @@
   "devDependencies": {
     "ganache-cli": "^6.12.2",
     "hardhat": "^2.2.0",
-    "solc": "^0.8.3",
+    "solc": "^0.7.6",
     "truffle": "^5.3.2"
   },
   "dependencies": {
