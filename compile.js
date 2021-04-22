@@ -7,25 +7,23 @@ const buildPath = path.resolve(__dirname, 'build');
 fs.removeSync(buildPath);
 
 
+const getSource = (contractFile, contractPath) => ({
+    [contractFile] : {
+        content: fs.readFileSync(path.resolve(__dirname, 'contracts', contractPath, contractFile), 'utf8')
+    }
+});
+
+const getSources = (contractFiles=[], contractPath='APR') => {
+    let sources = {};
+    contractFiles.forEach(c => {
+        sources = { ...sources, ...getSource(c, contractPath) };
+    });
+    return sources;
+};
+
 var input = {
     language: 'Solidity',
-    sources: {
-        'APR.sol' : {
-            content: fs.readFileSync(path.resolve(__dirname, 'contracts', 'APR', 'APR.sol'), 'utf8')
-        },
-        'ERC20.sol' : {
-            content: fs.readFileSync(path.resolve(__dirname, 'contracts', 'APR', 'ERC20.sol'), 'utf8')
-        },
-        'Context.sol' : {
-            content: fs.readFileSync(path.resolve(__dirname, 'contracts', 'APR', 'Context.sol'), 'utf8')
-        },
-        'IERC20.sol' : {
-            content: fs.readFileSync(path.resolve(__dirname, 'contracts', 'APR', 'IERC20.sol'), 'utf8')
-        },
-        'SafeMath.sol' : {
-            content: fs.readFileSync(path.resolve(__dirname, 'contracts', 'APR', 'SafeMath.sol'), 'utf8')
-        },
-    },
+    sources: getSources(['APR.sol', 'ERC20.sol', 'Context.sol', 'IERC20.sol', 'SafeMath.sol', 'Ownable.sol']),
     settings: {
         outputSelection: {
             '*': {

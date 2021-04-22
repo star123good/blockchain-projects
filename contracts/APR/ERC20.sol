@@ -41,7 +41,7 @@ contract ERC20 is Context, IERC20 {
 
     string private _name;
     string private _symbol;
-    uint8 _decimals;
+    uint8 private _decimals;
 
     /**
      * @dev Sets the values for {name} and {symbol}, initializes {decimals} with
