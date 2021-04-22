@@ -1,6 +1,10 @@
+const dotenv = require('dotenv');
 const HDWalletProvider = require('truffle-hdwallet-provider-privkey');
-const privateKey = "private-key-goes-here";
-const endpointUrl = "endpoint-goes-here";
+
+dotenv.config();
+
+const privateKey = process.env.INFURA_PROJECT_SECRET;
+const endpointUrl = process.env.INFURA_KOVAN_ENDPOINT;
 
 module.exports = {
     networks: {
