@@ -3,12 +3,11 @@
 pragma solidity ^ 0.7.6;
 
 import "./ERC20.sol";
-import "./Ownable.sol";
 
 /**
  *  APR token based on ERC20
  */
-contract APR is ERC20, Ownable {
+contract APR is ERC20 {
     using SafeMath for uint256;
 
     /**
@@ -19,6 +18,6 @@ contract APR is ERC20, Ownable {
      */
     constructor () ERC20("April", "APR") {
         _setupDecimals(6);
-        _mint(owner(), 21000000);
+        _mint(msg.sender, 21000000 * (uint256(10) ** 6));
     }
 }
