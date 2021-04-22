@@ -23,7 +23,9 @@ const getSources = (contractFiles=[], contractPath='APR') => {
 
 var input = {
     language: 'Solidity',
-    sources: getSources(['APR.sol', 'ERC20.sol', 'Context.sol', 'IERC20.sol', 'SafeMath.sol', 'Ownable.sol']),
+    sources: getSources([
+        'APR.sol', 'ERC20.sol', 'Context.sol', 'IERC20.sol', 'SafeMath.sol', 'Ownable.sol', 'APRSale.sol'
+    ]),
     settings: {
         outputSelection: {
             '*': {
