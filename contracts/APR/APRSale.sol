@@ -34,6 +34,13 @@ contract APRSale is Ownable {
     }
 
     /**
+     * get token address
+     */
+    function tokenAddress() public view virtual returns (address) {
+        return address(_token);
+    }
+
+    /**
      * get balance
      */
     function balance() public view virtual returns (uint256) {

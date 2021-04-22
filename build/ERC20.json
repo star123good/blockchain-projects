@@ -17538,7 +17538,7 @@
   "storageLayout": {
     "storage": [
       {
-        "astId": 234,
+        "astId": 246,
         "contract": "ERC20.sol:ERC20",
         "label": "_balances",
         "offset": 0,
@@ -17546,7 +17546,7 @@
         "type": "t_mapping(t_address,t_uint256)"
       },
       {
-        "astId": 240,
+        "astId": 252,
         "contract": "ERC20.sol:ERC20",
         "label": "_allowances",
         "offset": 0,
@@ -17554,7 +17554,7 @@
         "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
       },
       {
-        "astId": 242,
+        "astId": 254,
         "contract": "ERC20.sol:ERC20",
         "label": "_totalSupply",
         "offset": 0,
@@ -17562,7 +17562,7 @@
         "type": "t_uint256"
       },
       {
-        "astId": 244,
+        "astId": 256,
         "contract": "ERC20.sol:ERC20",
         "label": "_name",
         "offset": 0,
@@ -17570,7 +17570,7 @@
         "type": "t_string_storage"
       },
       {
-        "astId": 246,
+        "astId": 258,
         "contract": "ERC20.sol:ERC20",
         "label": "_symbol",
         "offset": 0,
@@ -17578,7 +17578,7 @@
         "type": "t_string_storage"
       },
       {
-        "astId": 248,
+        "astId": 260,
         "contract": "ERC20.sol:ERC20",
         "label": "_decimals",
         "offset": 0,

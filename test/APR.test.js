@@ -82,6 +82,11 @@ describe('APR Sale', () => {
         assert.strictEqual("1000", price);
     });
 
+    it('calls the contract address', async () => {
+        let address = await contractSale.methods.tokenAddress().call();
+        console.log("APR token address", address);
+    });
+
     it('calls the contract balance', async () => {
         let balance = await contractSale.methods.balance().call();
         console.log("balance", balance);
