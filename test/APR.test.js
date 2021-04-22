@@ -59,7 +59,7 @@ describe('APR', () => {
     it('calls the contract totalSupply', async () => {
         const totalSupply = await contractAPR.methods.totalSupply().call();
         console.log("totalSupply", totalSupply);
-        // assert.strictEqual("21000000", totalSupply);
+        assert.strictEqual("21000000000000", totalSupply);
     });
 });
 
@@ -90,18 +90,22 @@ describe('APR Sale', () => {
     it('calls the contract balance', async () => {
         let balance = await contractSale.methods.balance().call();
         console.log("balance", balance);
-        // assert.strictEqual("21000000", balance);
+        assert.strictEqual("21000000000000", balance);
     });
 
     it('buys tokens', async () => {
-        await contractSale.methods.setPrice(1000).send({
+        await contractSale.methods.setPrice(1000000000000).send({
             from: accounts[0],
             gas: '1000000'
         });
 
-        await contractSale.methods.buy(1000).send({
+        const price = await contractSale.methods.price().call();
+        const value = web3.utils.toWei('0.1', 'ether');
+        console.log("price:", price, "value:", value);
+
+        await contractSale.methods.buy(100000).send({
             from: accounts[1],
-            value: 1000000
+            value: value
         });
     });
 });
